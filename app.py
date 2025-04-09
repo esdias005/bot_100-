@@ -130,4 +130,4 @@ def history():
     return jsonify({'history': history_list})
 
 if __name__ == '__main__':
-    app.run(debug="true")
+    app.run(host='0.0.0.0',port=int(os.environ.get('port',5000)))
