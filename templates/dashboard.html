@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bot Aviator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container dashboard">
+        <header>
+            <h1>BOT DE PREVISÃO AVIATOR</h1>  
+            <div class="airplane-icon"></div>
+            <a href="{{ url_for('logout') }}" class="logout-btn">Sair</a>
+        </header>
+       
+        <div class="dashboard-content">
+            <div class="input-section">
+                <h2>Gerar Previsão</h2>
+                <form id="predict-form">
+                    <div class="form-group">
+                        <label for="betting_site_url">Link da Casa de Apostas</label>
+                        <input type="url" id="betting_site_url" name="betting_site_url" placeholder="Cole o link da casa de apostas" required>
+                    </div>
+                   
+                    <button type="submit" class="btn primary-btn">Gerar Previsão</button>
+                </form>
+            </div>
+           
+            <div class="prediction-section">
+                <div class="prediction-display">
+                    <h2>Próxima Previsão</h2>
+                    <div class="prediction-number" id="prediction-value">--.--</div>
+                    <div class="timer-display">
+                        <p>Tempo restante: <span id="timer">--</span> segundos</p>
+                    </div>
+                    <div class="loading-bar">
+                        <div class="progress" id="progress-bar"></div>
+                    </div>
+                </div>
+               
+                <div class="history-section">
+                    <h2>Histórico</h2>
+                    <div class="history-list" id="history-container">
+                        <div class="history-item">--.--</div>
+                        <div class="history-item">--.--</div>
+                        <div class="history-item">--.--</div>
+                        <div class="history-item">--.--</div>
+                        <div class="history-item">--.--</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <footer>
+            <p>&copy; 2025 Bot Aviator - Todos os direitos reservados</p>
+        </footer>
+    </div>
+   
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Aviator - Previsões</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BOT DE PREVISÃO AVIATOR</h1>
+            <div class="airplane-icon"></div>
+        </header>
+       
+        <div class="welcome-card">
+            <h2>Bem-vindo ao Bot de Previsão Aviator</h2>
+            <p>Faça previsões precisas para o jogo Aviator com nossa tecnologia avançada.</p>
+           
+            <div class="button-group">
+                <a href="{{ url_for('register') }}" class="btn primary-btn">Cadastrar</a>
+                <a href="{{ url_for('login') }}" class="btn secondary-btn">Entrar</a>
+            </div>
+        </div>
+       
+        <footer>
+            <p>&copy; 2025 Bot Aviator - Todos os direitos reservados</p>
+        </footer>
+    </div>
+</body>
+</html>

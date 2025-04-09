@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Segurança - Bot Aviator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CÓDIGO DE SEGURANÇA</h1>
+            <div class="airplane-icon"></div>
+        </header>
+       
+        <div class="security-card">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+           
+            <p class="security-info">Digite o código de verificação para acessar o bot</p>
+           
+            <form action="{{ url_for('security') }}" method="post">
+                <div class="form-group">
+                    <input type="text" id="security_code" name="security_code" placeholder="Digite o código " maxlength="6" required>
+                </div>
+               
+                <button type="submit" class="btn primary-btn">Verificar</button>
+            </form>
+           
+            <div class="security-note">
+                <p>Código padrão: <span class="security-code"></span></p>
+            </div>
+        </div>
+       
+        <footer>
+            <p>&copy; 2025 Bot Aviator - Todos os direitos reservados</p>
+        </footer>
+    </div>
+   
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
